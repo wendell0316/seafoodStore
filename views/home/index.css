@@ -1,0 +1,15 @@
+.body {
+    background:rgba(255,255,255,1);
+}
+.top {
+    display: flex;
+    width:100%;
+    height:112px;
+    background:linear-gradient(180deg,rgba(0,134,255,1) 0%,rgba(2,171,255,1) 99%);
+}
+.search {
+    width:70%;
+    height:30px;
+    background:rgba(255,255,255,1);
+    border-radius:30px;
+}
