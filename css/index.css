@@ -12,6 +12,11 @@ p {
     padding: 0;
     list-style: none;
 }
+button {
+    border: none;
+    background: none;
+    padding: 0;
+}
 
 .nav-bar {
     width: 100%;
@@ -23,6 +28,14 @@ p {
     font-size: 17px;
     line-height: 44px;
     color: white;
+}
+
+.nav-bar .nav-bar-right {
+    font-size: 30px;
+    position: absolute;
+    line-height: 40px;
+    right: 15px;
+
 }
 
 .nav-bar .back {
@@ -209,6 +222,7 @@ p {
     width: 50px;
     font-size: 12px;
     color: #B7C1CF;
+    text-align: center;
 }
 
 .order-bar .active {
@@ -237,40 +251,270 @@ p {
     display: flex;
     align-items: center;
 }
-.order-content-box .item img{
+
+.order-content-box .item img {
     width: 90px;
     height: 90px;
     background: red;
 }
+
 .order-content-left-box {
     margin-left: 10px;
 }
-.order-content-left-box .title{
+
+.order-content-left-box .title {
     color: #808080;
     font-size: 15px;
 }
-.order-content-left-box .secondTitle{
+
+.order-content-left-box .secondTitle {
     margin-top: 10px;
     color: #B7C1CF;
     font-size: 12px;
 }
-.order-content-left-box .bottom{
+
+.order-content-left-box .bottom {
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.order-content-left-box .bottom span{
+
+.order-content-left-box .bottom span {
     color: #0086FF;
     font-size: 15px;
 }
-.order-content-left-box .bottom button{ 
+
+.order-content-left-box .bottom button {
     font-size: 10px;
     padding: 4px 5px;
     color: #B7C1CF;
     border: 1px solid #B7C1CF;
-    border-radius:2px;
+    border-radius: 2px;
     background: none;
     outline: none;
 }
 
+.address-content-box {
+    margin-top: 44px;
+}
+
+.address-content-box .item {
+    height: 37px;
+    background: white;
+    margin-bottom: 8px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.address-content-box .item .infoBox {
+    font-size: 15px;
+    flex: 1;
+}
+
+.address-content-box .item .infoBox .name span {
+    font-size: 12px;
+    color: #B7C1CF;
+    margin-left: 10px;
+    line-height: 15px;
+}
+
+.address-content-box .item .infoBox .address {
+    max-width: 200px;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #808080;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.address-content-box .item .options {
+    height: 30px;
+    border-left: 1px solid #E9E9E9;
+    margin-left: 12px;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.address-content-box .item .options button {
+    color: #B7C1CF;
+    font-size: 15px;
+    width: 58px;
+}
+
+.address-content-box .item .options .delete {
+    width: 60px;
+    height: 45px;
+    color: white;
+    background: #f54e55;
+    font-size: 15px;
+    line-height: 45px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.supply-content {
+    margin: 0 30px;
+    margin-top: 59px;
+}
+
+.supply-content .item {
+    background: white;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.supply-content .item .top {
+    height: 44px;
+    padding: 0 15px;
+    border-bottom: 1px solid rgba(244, 244, 244, 1);
+    align-items: center;
+    display: flex;
+}
+
+.supply-content .item .top .title {
+    margin-left: 6px;
+    color: #333333;
+    font-size: 14px;
+    flex: 1;
+}
+
+.supply-content .item .top button {
+    color: #B7C1CF;
+}
+
+.supply-content .item .top .edit {
+    padding: 0;
+    padding-right: 15px;
+    border: none;
+    border-right: 1px solid #C1C4C9;
+    background: none;
+}
+
+.supply-content .item .top .delete {
+    padding: 0;
+    padding-left: 15px;
+    border: none;
+    background: none;
+}
+
+.supply-content .container {
+    display: flex;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+
+.supply-content .container .goodsitem {
+    margin-right: 7px;
+}
+
+.supply-content .container .goodsitem:nth-child(3n) {
+    margin-right: 0;
+}
+
+.supply-content .container .goodsitem img {
+    width: 90px;
+    height: 90px;
+    background: red;
+}
+
+.supply-content .container .goodsitem .title {
+    margin-top: 5px;
+    color: #333333;
+    font-size: 12px;
+}
+
+.supply-content .container .goodsitem .price {
+    color: #0086FF;
+    margin-top: 10px;
+}
+
+.supply-content .container .goodsitem .oldPrice {
+    font-size: 10px;
+    color: #B7C1CF;
+}
+
+.supply-content .container .goodsitem .oldPrice span {
+    text-decoration: line-through;
+}
+
+.loginWrap {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(15deg, rgba(0, 134, 255, 1), rgba(30, 148, 255, 1), rgba(10, 183, 237, 1));
+    padding-top: 280px;
+}
+
+.loginWrap .title {
+    text-align: center;
+}
+
+.loginWrap .login-input-box {
+    margin: 0 40px;
+}
+
+.loginWrap .login-input-box .input-box {
+    display: flex;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 1);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
+    border-radius: 3px;
+    align-items: center;
+    padding: 0 10px;
+    margin-bottom: 15px;
+}
+
+.loginWrap .login-input-box .input-box input {
+    flex: 1;
+    background: none;
+    border: none;
+    margin-left: 5px;
+    height: 20px;
+    line-height: 20px;
+    outline: none;
+    color: white;
+}
+
+.loginWrap .login-input-box .input-box input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.loginWrap .login-input-box  button {
+    width: 100%;
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(255, 255, 255, 1);
+    border-radius: 3px;
+    color: #0C7AE5;
+    height: 40px;
+    font-size: 15px;
+    outline: none;
+}
+.loginWrap .login-input-box .opt-bar {
+    margin: 20px 0 25px;
+    display: flex;
+    align-items: center;
+}
+
+.loginWrap .login-input-box .opt-bar .rempwdIcon{
+    width: 12;
+    height: 12px;
+    border: 1px solid #ffffff99;
+    border-radius: 100%;
+}
+
+.loginWrap .login-input-box .opt-bar .rempwd{
+   color: #ffffff99;
+   font-size: 12px;
+   flex: 1;
+   margin-left: 5px;
+}
+
+.loginWrap .login-input-box .opt-bar .forget{
+    color: #ffffff99;
+    font-size: 12px;
+ }
+ 
