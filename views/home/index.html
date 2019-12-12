@@ -1,25 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./index.css">
-</head>
-<body>
-    <div class="top">
-        <input type="text" class="search">
-        <i class="person"></i>
-    </div>
-    <div class="info"></div>
-    <div class="content">
-        <div class="left"></div>
-        <div class="right"></div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js" integrity="sha384-L2pyEeut/H3mtgCBaUNw7KWzp5n9+4pDQiExs933/5QfaTh8YStYFFkOzSoXjlTb" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="./index.css" />
+    </head>
+    <body>
+        <div class="top">
+            <input type="text" placeholder="搜索店内商品" class="search" />
+            <i class="search-icon"></i>
+            <i class="person"></i>
+        </div>
+        <div class="info">
+            <div class="merchant">
+                <div>
+                    <div class="name">海鲜商城大酒店</div>
+                    <div class="announcement">
+                        <i class="announcement-icon"></i>
+                        <span class="announcement-info"
+                            >这是店铺的简介或者公告优惠信息</span
+                        >
+                    </div>
+                </div>
+                <div>
+                    <img
+                        class="home-icon"
+                        src="../../images/home-icon.png"
+                        alt=""
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="left">
+                <div class="left-item act-classify">
+                    进店必买
+                </div>
+                <div class="left-item">
+                    进店必买
+                </div>
+                <div class="left-item">
+                    进店必买
+                </div>
+            </div>
+            <div class="right">
+                <div class="right-item">
+                    <div class="commodity-image">
+                        <img src="" alt="" />
+                    </div>
+                    <div class="commodity-info">
+                        <div class="commodity-desc">
+                            <div>鲜活河虾250G</div>
+                            <div>营养河虾 鲜嫩脆甜</div>
+                        </div>
+
+                        <div class="commodity-price">
+                            <div class="price">￥20.55</div>
+                            <div class="price-type">供货价</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-item">
+                    <div class="commodity-image">
+                        <img src="" alt="" />
+                    </div>
+                    <div class="commodity-info">
+                        <div class="commodity-desc">
+                            <div>鲜活河虾250G</div>
+                            <div>营养河虾 鲜嫩脆甜</div>
+                        </div>
+
+                        <div class="commodity-price">
+                            <div class="price">￥20.55</div>
+                            <div class="price-type">供货价</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-item">
+                    <div class="commodity-image">
+                        <img src="" alt="" />
+                    </div>
+                    <div class="commodity-info">
+                        <div class="commodity-desc">
+                            <div>鲜活河虾250G</div>
+                            <div>营养河虾 鲜嫩脆甜</div>
+                        </div>
+
+                        <div class="commodity-price">
+                            <div class="price">￥20.55</div>
+                            <div class="price-type">供货价</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-item">
+                    <div class="commodity-image">
+                        <img src="" alt="" />
+                    </div>
+                    <div class="commodity-info">
+                        <div class="commodity-desc">
+                            <div>鲜活河虾250G</div>
+                            <div>营养河虾 鲜嫩脆甜</div>
+                        </div>
+
+                        <div class="commodity-price">
+                            <div class="price">￥20.55</div>
+                            <div class="price-type">供货价</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-item">
+                    <div class="commodity-image">
+                        <img src="" alt="" />
+                    </div>
+                    <div class="commodity-info">
+                        <div class="commodity-desc">
+                            <div>鲜活河虾250G</div>
+                            <div>营养河虾 鲜嫩脆甜</div>
+                        </div>
+
+                        <div class="commodity-price">
+                            <div class="price">￥20.55</div>
+                            <div class="price-type">供货价</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-item">
+                    <div class="commodity-image">
+                        <img src="" alt="" />
+                    </div>
+                    <div class="commodity-info">
+                        <div class="commodity-desc">
+                            <div>鲜活河虾250G</div>
+                            <div>营养河虾 鲜嫩脆甜</div>
+                        </div>
+
+                        <div class="commodity-price">
+                            <div class="price">￥20.55</div>
+                            <div class="price-type">供货价</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-item">
+                    <div class="commodity-image">
+                        <img src="" alt="" />
+                    </div>
+                    <div class="commodity-info">
+                        <div class="commodity-desc">
+                            <div>鲜活河虾250G</div>
+                            <div>营养河虾 鲜嫩脆甜</div>
+                        </div>
+
+                        <div class="commodity-price">
+                            <div class="price">￥20.55</div>
+                            <div class="price-type">供货价</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"
+            integrity="sha384-L2pyEeut/H3mtgCBaUNw7KWzp5n9+4pDQiExs933/5QfaTh8YStYFFkOzSoXjlTb"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"
+        ></script>
+        <script src="./index.js"></script>
+    </body>
 </html>
