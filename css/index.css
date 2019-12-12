@@ -1,0 +1,276 @@
+body,
+form {
+    margin: 0;
+    font-family: PingFang TC;
+    background: rgba(246, 246, 246, 1);
+}
+
+ul,
+li,
+p {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-bar {
+    width: 100%;
+    height: 44px;
+    background: linear-gradient(180deg, rgba(0, 134, 255, 1) 0%, rgba(2, 171, 255, 1) 100%);
+    position: fixed;
+    top: 0;
+    text-align: center;
+    font-size: 17px;
+    line-height: 44px;
+    color: white;
+}
+
+.nav-bar .back {
+    width: 10px;
+    height: 17px;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.contentBox {
+    padding: 44px 15px 0;
+}
+
+.contentBox .item {
+    height: 63px;
+    background: white;
+    margin-top: 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.contentBox .item .headLogo {
+    width: 40px;
+    height: 40px;
+    background: gray;
+    border-radius: 100%;
+}
+
+.contentBox .item .content {
+    flex: 1;
+    margin-left: 7px;
+}
+
+.contentBox .item .content .name {
+    color: #2E2E2E;
+    font-size: 15px;
+}
+
+.contentBox .item .content .time {
+    font-size: 12px;
+    color: #B7C1CF;
+}
+
+.contentBox .item .content .time2 {
+    font-size: 15px;
+    color: #333333;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.contentBox .item .content .group-name {
+    font-size: 15px;
+    color: #333333;
+    font-weight: bold;
+}
+
+.contentBox .item .content .group-phone {
+    font-size: 12px;
+    color: #B7C1CF;
+    margin-top: 5px;
+}
+
+.contentBox .item .content .date {
+    font-size: 12px;
+    color: #B7C1CF;
+}
+
+.contentBox .item .num {
+    color: #0086FF;
+    font-size: 18px;
+}
+
+.contentBox .item .num span {
+    font-size: 15px;
+}
+
+.person-top {
+    width: 100%;
+    height: 225px;
+    background: linear-gradient(180deg, rgba(0, 134, 255, 1) 0%, rgba(2, 171, 255, 1) 100%);
+}
+
+.person-top .infoBox {
+    padding: 25px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.person-top .infoBox .personInfo {
+    color: #FFFFFF;
+    font-size: 21px;
+}
+
+.person-top .infoBox .personInfo .desc {
+    font-size: 12px;
+}
+
+.person-top .infoBox .headLogo {
+    width: 40px;
+    height: 40px;
+    background: #FFFFFF;
+}
+
+.person-top .operationBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.person-top .operationBar .num {
+    font-size: 18px;
+}
+
+.person-top .operationBar .name {
+    font-size: 12px;
+}
+
+.person-top .operationBar .item {
+    text-align: center;
+    text-align: center;
+    flex: 1;
+}
+
+.person-top .operationBar .line {
+    width: 1px;
+    height: 30px;
+    background: linear-gradient(90deg, rgba(163, 222, 255, 1) 0%, rgba(163, 222, 255, 1) 50%, rgba(0, 146, 231, 1) 50%, rgba(0, 146, 231, 1) 100%);
+}
+
+.person-menu {
+    height: 416px;
+    padding-top: 20px;
+    position: relative;
+    top: -25px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 20px 20px 0 0;
+}
+
+.person-menu .item {
+    height: 50px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #808080;
+    font-size: 12px;
+}
+
+.person-menu .item .icon {
+    width: 15px;
+    height: 15px;
+    background: green;
+}
+
+.person-menu .item span {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.person-menu .item .options {
+    width: 7px;
+    height: 12px;
+    background: red;
+}
+
+.order-bar {
+    width: 100%;
+    position: fixed;
+    top: 44px;
+    background: white;
+    height: 39px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.order-bar .item {
+    line-height: 39px;
+    width: 50px;
+    font-size: 12px;
+    color: #B7C1CF;
+}
+
+.order-bar .active {
+    color: #2E2E2E;
+}
+
+.order-bar .active::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(2, 171, 255, 1), rgba(0, 134, 255, 1));
+}
+
+.order-content-box {
+    margin: 0 15px;
+    margin-top: 98px;
+}
+
+.order-content-box .item {
+    height: 90px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 4px;
+    margin-bottom: 15px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+.order-content-box .item img{
+    width: 90px;
+    height: 90px;
+    background: red;
+}
+.order-content-left-box {
+    margin-left: 10px;
+}
+.order-content-left-box .title{
+    color: #808080;
+    font-size: 15px;
+}
+.order-content-left-box .secondTitle{
+    margin-top: 10px;
+    color: #B7C1CF;
+    font-size: 12px;
+}
+.order-content-left-box .bottom{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.order-content-left-box .bottom span{
+    color: #0086FF;
+    font-size: 15px;
+}
+.order-content-left-box .bottom button{ 
+    font-size: 10px;
+    padding: 4px 5px;
+    color: #B7C1CF;
+    border: 1px solid #B7C1CF;
+    border-radius:2px;
+    background: none;
+    outline: none;
+}
+
