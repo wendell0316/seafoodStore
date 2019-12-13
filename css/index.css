@@ -12,12 +12,14 @@ p {
     padding: 0;
     list-style: none;
 }
-button {
+button,input {
     border: none;
     background: none;
     padding: 0;
 }
-
+input {
+    font-size: 12px;
+}
 .nav-bar {
     width: 100%;
     height: 44px;
@@ -64,7 +66,6 @@ button {
 .contentBox .item .headLogo {
     width: 40px;
     height: 40px;
-    background: gray;
     border-radius: 100%;
 }
 
@@ -141,7 +142,6 @@ button {
 .person-top .infoBox .headLogo {
     width: 40px;
     height: 40px;
-    background: #FFFFFF;
 }
 
 .person-top .operationBar {
@@ -193,7 +193,6 @@ button {
 .person-menu .item .icon {
     width: 15px;
     height: 15px;
-    background: green;
 }
 
 .person-menu .item span {
@@ -204,7 +203,6 @@ button {
 .person-menu .item .options {
     width: 7px;
     height: 12px;
-    background: red;
 }
 
 .order-bar {
@@ -376,6 +374,10 @@ button {
     display: flex;
 }
 
+.supply-content .item .top .smartIcon{
+    width: 12px; height: 14px;
+}
+
 .supply-content .item .top .title {
     margin-left: 6px;
     color: #333333;
@@ -419,7 +421,6 @@ button {
 .supply-content .container .goodsitem img {
     width: 90px;
     height: 90px;
-    background: red;
 }
 
 .supply-content .container .goodsitem .title {
@@ -444,11 +445,29 @@ button {
 
 .loginWrap {
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
     background: linear-gradient(15deg, rgba(0, 134, 255, 1), rgba(30, 148, 255, 1), rgba(10, 183, 237, 1));
-    padding-top: 280px;
+    padding-top: 80px; 
+    position: relative;
 }
-
+.loginWrap .logo {
+    width:80px;
+    height:80px;
+    background: white;
+    border-radius: 100%;
+    margin: 0 auto;
+    color: #0C7AE5;
+    text-align: center;
+    line-height: 80px;
+}
+.loginWrap .title {
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    padding: 35px 0 70px;
+    font-weight: bold;
+}
 .loginWrap .title {
     text-align: center;
 }
@@ -466,7 +485,9 @@ button {
     align-items: center;
     padding: 0 10px;
     margin-bottom: 15px;
+    opacity: 0.6;
 }
+
 
 .loginWrap .login-input-box .input-box input {
     flex: 1;
@@ -492,6 +513,7 @@ button {
     height: 40px;
     font-size: 15px;
     outline: none;
+    position: relative;
 }
 .loginWrap .login-input-box .opt-bar {
     margin: 20px 0 25px;
@@ -505,6 +527,13 @@ button {
     border: 1px solid #ffffff99;
     border-radius: 100%;
 }
+.loginWrap .login-input-box .opt-bar .full{
+    width: 12;
+    height: 12px;
+    border: 1px solid #ffffff99;
+    background: #ffffff99;
+    border-radius: 100%;
+}
 
 .loginWrap .login-input-box .opt-bar .rempwd{
    color: #ffffff99;
@@ -516,5 +545,17 @@ button {
 .loginWrap .login-input-box .opt-bar .forget{
     color: #ffffff99;
     font-size: 12px;
- }
+}
+.loginWrap .login-top-Icon {
+    position: absolute;
+    width: 100%;
+    top: 100px;
+    left: 0;
+}
  
+.loginWrap .login-bottom-icon {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}

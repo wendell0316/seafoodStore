@@ -34,23 +34,28 @@
 		#choiceWindow .inputBox:last-child {
 			border: none
 		}
-		#choiceWindow .inputBox .left{
+
+		#choiceWindow .inputBox .left {
 			width: 60px;
 			font-size: 15px;
 			color: #545A6B;
 			text-align: left;
 		}
-		#choiceWindow .inputBox input{
+
+		#choiceWindow .inputBox input {
 			margin-left: 29px;
 			flex: 1;
 			outline: none;
 		}
-		#choiceWindow .inputBox input::placeholder{
+
+		#choiceWindow .inputBox input::placeholder {
 			color: #B7C1CF;
 		}
+
 		#choiceWindow .btnBox {
 			padding: 0 35px;
 		}
+
 		#choiceWindow button {
 			width: 100%;
 			height: 44px;
@@ -74,6 +79,10 @@
 			opacity: .80;
 			filter: alpha(opacity=88);
 		}
+
+		.delete {
+			display: none;
+		}
 	</style>
 </head>
 
@@ -94,6 +103,7 @@
 			</div>
 			<div class="options">
 				<button>编辑</button>
+				<button class="delete hideOrShow">删除</button>
 			</div>
 		</div>
 		<div class="item">
@@ -107,7 +117,7 @@
 			</div>
 			<div class="options">
 				<button>编辑</button>
-				<button class="delete hideOrShow" id="delete">删除</button>
+				<button class="delete hideOrShow">删除</button>
 			</div>
 		</div>
 	</div>
@@ -136,7 +146,7 @@
 				确认
 			</button>
 		</div>
-		
+
 	</div>
 	<div id="backGround" class="hideOrShow"></div>
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -148,6 +158,23 @@
 			$(".hideOrShow").click(function () {
 				$("#choiceWindow").toggle();
 				$("#backGround").toggle();
+			});
+			$(".options").on("touchstart", function (e) {
+				e.preventDefault();
+				startX = e.originalEvent.changedTouches[0].pageX,
+					startY = e.originalEvent.changedTouches[0].pageY;
+			});
+			$(".options").on("touchmove", function (e) {
+				e.preventDefault();
+				moveEndX = e.originalEvent.changedTouches[0].pageX,
+					moveEndY = e.originalEvent.changedTouches[0].pageY,
+					X = moveEndX - startX,
+					Y = moveEndY - startY;
+				if (X > 50) {
+					$(this).find(".delete").hide()
+				} else if (X < 50) {
+					$(this).find(".delete").show()
+				}
 			});
 		})
 	</script>
