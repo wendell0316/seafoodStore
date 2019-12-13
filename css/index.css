@@ -302,14 +302,13 @@ input {
     height: 37px;
     background: white;
     margin-bottom: 8px;
-    padding: 15px;
+    padding: 15px 0;
     display: flex;
     align-items: center;
 }
 
 .address-content-box .item .infoBox {
     font-size: 15px;
-    flex: 1;
     overflow: hidden;
 }
 
@@ -330,22 +329,19 @@ input {
 }
 
 .address-content-box .item .options {
-    position: absolute;
-    right: 0;
     height: 40px;
-    border-left: 1px solid #E9E9E9;
-    margin-left: 12px;
-    padding-left: 15px;
     display: flex;
     align-items: center;
     background: white;
-    padding-right: 15px;
 }
 
-.address-content-box .item .options button {
+.address-content-box .edit {
+    border-left: 1px solid #E9E9E9;
     color: #B7C1CF;
     font-size: 15px;
     width: 58px;
+    /* padding: 0 15px; */
+    float: right;
 }
 
 .address-content-box .item .options .delete {
@@ -358,6 +354,8 @@ input {
     border: none;
     outline: none;
     border-radius: 5px;
+    padding-right: 0;
+    margin-right: 15px;
 }
 
 .supply-content {
@@ -563,4 +561,75 @@ input {
     width: 100%;
     bottom: 0;
     left: 0;
+}
+
+/* 弹窗样式 */
+#choiceWindow {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 212px;
+    background-color: white;
+    z-index: 2;
+    overflow: auto;
+    width: 100%;
+    padding: 12px 25px;
+    box-sizing: border-box;
+}
+
+#choiceWindow .inputBox {
+    height: 42px;
+    border-bottom: 1px solid rgba(244, 244, 244, 1);
+    display: flex;
+    align-items: center;
+}
+
+#choiceWindow .inputBox:last-child {
+    border: none
+}
+
+#choiceWindow .inputBox .left {
+    width: 60px;
+    font-size: 15px;
+    color: #545A6B;
+    text-align: left;
+}
+
+#choiceWindow .inputBox input {
+    margin-left: 29px;
+    flex: 1;
+    outline: none;
+}
+
+#choiceWindow .inputBox input::placeholder {
+    color: #B7C1CF;
+}
+
+#choiceWindow .btnBox {
+    padding: 0 35px;
+}
+
+#choiceWindow button {
+    width: 100%;
+    height: 44px;
+    background: linear-gradient(0deg, rgba(0, 134, 255, 1) 0%, rgba(2, 171, 255, 1) 100%);
+    border-radius: 22px;
+    font-size: 15px;
+    color: white;
+    margin-top: 15px;
+}
+
+#backGround {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    z-index: 1;
+    -moz-opacity: 0.8;
+    opacity: .80;
+    filter: alpha(opacity=88);
 }

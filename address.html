@@ -9,80 +9,7 @@
 	<link rel="stylesheet" href="./css/index.css" />
 	<title>收货地址</title>
 	<style>
-		/* 弹窗样式 */
-		#choiceWindow {
-			display: none;
-			position: fixed;
-			bottom: 0;
-			left: 0;
-			height: 212px;
-			background-color: white;
-			z-index: 2;
-			overflow: auto;
-			width: 100%;
-			padding: 12px 25px;
-			box-sizing: border-box;
-		}
-
-		#choiceWindow .inputBox {
-			height: 42px;
-			border-bottom: 1px solid rgba(244, 244, 244, 1);
-			display: flex;
-			align-items: center;
-		}
-
-		#choiceWindow .inputBox:last-child {
-			border: none
-		}
-
-		#choiceWindow .inputBox .left {
-			width: 60px;
-			font-size: 15px;
-			color: #545A6B;
-			text-align: left;
-		}
-
-		#choiceWindow .inputBox input {
-			margin-left: 29px;
-			flex: 1;
-			outline: none;
-		}
-
-		#choiceWindow .inputBox input::placeholder {
-			color: #B7C1CF;
-		}
-
-		#choiceWindow .btnBox {
-			padding: 0 35px;
-		}
-
-		#choiceWindow button {
-			width: 100%;
-			height: 44px;
-			background: linear-gradient(0deg, rgba(0, 134, 255, 1) 0%, rgba(2, 171, 255, 1) 100%);
-			border-radius: 22px;
-			font-size: 15px;
-			color: white;
-			margin-top: 15px;
-		}
-
-		#backGround {
-			display: none;
-			position: fixed;
-			top: 0%;
-			left: 0%;
-			width: 100vw;
-			height: 100vh;
-			background-color: black;
-			z-index: 1;
-			-moz-opacity: 0.8;
-			opacity: .80;
-			filter: alpha(opacity=88);
-		}
-
-		.delete {
-			display: none;
-		}
+		
 	</style>
 </head>
 
@@ -103,7 +30,7 @@
 			</div>
 			<div class="options">
 				<button>编辑</button>
-				<button class="delete hideOrShow">删除</button>
+				<button class="delete show">删除</button>
 			</div>
 		</div>
 		<div class="item">
@@ -117,7 +44,7 @@
 			</div>
 			<div class="options">
 				<button>编辑</button>
-				<button class="delete hideOrShow">删除</button>
+				<button class="delete show">删除</button>
 			</div>
 		</div>
 	</div>
@@ -142,21 +69,23 @@
 			<input type="text" name="" id="" placeholder="请输入详细地址">
 		</div>
 		<div class="btnBox">
-			<button class="hideOrShow">
+			<button class="hide">
 				确认
 			</button>
 		</div>
 
 	</div>
-	<div id="backGround" class="hideOrShow"></div>
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-	</script>
+	<div id="backGround" class="hide"></div>
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 	<script>
 		//删除点击
 		$(function () {
-			$(".hideOrShow").click(function () {
-				$("#choiceWindow").toggle();
+			$(".show").click(function () {
+				$("#choiceWindow").slideDown(200);
+				$("#backGround").toggle();
+			});
+			$(".hide").click(function () {
+				$("#choiceWindow").slideUp(200);
 				$("#backGround").toggle();
 			});
 			$(".options").on("touchstart", function (e) {
