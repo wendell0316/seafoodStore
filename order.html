@@ -31,7 +31,7 @@
 	</div>
 	<div class="order-content-box">
 		<div class="item">
-			<img src="" alt="">
+			<img src="./images/prodImg.png" alt="">
 			<div class="order-content-left-box">
 				<p class="title">泰国进口新鲜龙利鱼无骨龙利鱼</p>
 				<p class="secondTitle">这是副标题</p>
@@ -46,12 +46,18 @@
 		const orderBar = document.querySelector('.order-bar');
 		orderBar.addEventListener('click', (e) => {
 			const allItems = [...orderBar.children];
+			if (e.target.className === 'item') {
+				
+			} else {
+				return
+			}
 			for (const item of allItems) {
 				item.classList.remove('active');
 			}
-			if (e.target.className === 'item') {
+			for (const item of allItems) {
 				e.target.classList.add('active')
 			}
+			
 		})
 	</script>
 </body>
