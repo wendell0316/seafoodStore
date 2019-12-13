@@ -1,0 +1,59 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="./css/index.css" />
+	<title>我的订单</title>
+</head>
+
+<body>
+	<div class="nav-bar">
+		<img src="./images/back.png" alt="" class="back">
+		我的订单
+	</div>
+	<div class="order-bar">
+		<div class="item active">
+			全部订单
+		</div>
+		<div class="item">
+			待支付
+		</div>
+		<div class="item">
+			发货中
+		</div>
+		<div class="item">
+			已发货
+		</div>
+	</div>
+	<div class="order-content-box">
+		<div class="item">
+			<img src="" alt="">
+			<div class="order-content-left-box">
+				<p class="title">泰国进口新鲜龙利鱼无骨龙利鱼</p>
+				<p class="secondTitle">这是副标题</p>
+				<div class="bottom">
+					<span>¥53000.00</span>
+					<button>待发货</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		const orderBar = document.querySelector('.order-bar');
+		orderBar.addEventListener('click', (e) => {
+			const allItems = [...orderBar.children];
+			for (const item of allItems) {
+				item.classList.remove('active');
+			}
+			if (e.target.className === 'item') {
+				e.target.classList.add('active')
+			}
+		})
+	</script>
+</body>
+
+</html>
