@@ -1,15 +1,51 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport"
-		content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="./css/index.css" />
+		content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
 	<title>收货地址</title>
-	<style>
-		
+	<link rel="stylesheet" href="./css/index.css" />
+	<style type="text/css">
+		* {
+			margin: 0 auto;
+			padding: 0;
+			touch-action: none;
+		}
+
+		body {
+			width: 100vw;
+			overflow: hidden;
+		}
+
+		.list-box {
+			width: 100vw;
+			height: 66px;
+			margin-bottom: 8px;
+			overflow: hidden;
+		}
+
+		.touch-box {
+			position: absolute;
+			left: 0;
+		}
+
+		.touch-box .touch {
+			width: 100%;
+			/* display: flex; */
+		}
+
+		.infoBox {
+			float: left;
+			padding-left: 15px;
+		}
+
+		.edit {
+			margin-top: 11px;
+		}
 	</style>
 </head>
 
@@ -18,33 +54,81 @@
 		<img src="./images/back.png" alt="" class="back">
 		收货地址
 	</div>
-	<div class="address-content-box">
-		<div class="item">
-			<div class="infoBox">
-				<div class="name">
-					张三 <span>13525652123</span>
+	<div class="address-content-box" id="slideDeleteBox">
+		<div class="list-box ">
+			<div class="touch-box item">
+				<div class="touch">
+					<div class="infoBox">
+						<div class="name">
+							张三 11<span>13525652123</span>
+						</div>
+						<div class="address">
+							武汉市关山大道武大园二路关山大道
+						</div>
+					</div>
+					<button class="edit show">编辑</button>
 				</div>
-				<div class="address">
-					武汉市关山大道武大园二路关山大道
+
+				<div class="del options">
+					<button class="delete">删除</button>
 				</div>
-			</div>
-			<div class="options">
-				<button>编辑</button>
-				<button class="delete show">删除</button>
 			</div>
 		</div>
-		<div class="item">
-			<div class="infoBox">
-				<div class="name">
-					张三 <span>13525652123</span>
+		<div class="list-box ">
+			<div class="touch-box item">
+				<div class="touch">
+					<div class="infoBox">
+						<div class="name">
+							张三 11<span>13525652123</span>
+						</div>
+						<div class="address">
+							武汉市关山大道武大园二路关山大道
+						</div>
+					</div>
+					<button class="edit show">编辑</button>
 				</div>
-				<div class="address">
-					武汉市关山大道武大园二路关山大道
+
+				<div class="del options">
+					<button class="delete">删除</button>
 				</div>
 			</div>
-			<div class="options">
-				<button>编辑</button>
-				<button class="delete show">删除</button>
+		</div>
+		<div class="list-box ">
+			<div class="touch-box item">
+				<div class="touch">
+					<div class="infoBox">
+						<div class="name">
+							张三 11<span>13525652123</span>
+						</div>
+						<div class="address">
+							武汉市关山大道武大园二路关山大道
+						</div>
+					</div>
+					<button class="edit show">编辑</button>
+				</div>
+
+				<div class="del options">
+					<button class="delete ">删除</button>
+				</div>
+			</div>
+		</div>
+		<div class="list-box ">
+			<div class="touch-box item">
+				<div class="touch">
+					<div class="infoBox">
+						<div class="name">
+							张三 11<span>13525652123</span>
+						</div>
+						<div class="address">
+							武汉市关山大道武大园二路关山大道
+						</div>
+					</div>
+					<button class="edit show">编辑</button>
+				</div>
+
+				<div class="del options">
+					<button class="delete">删除</button>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -77,9 +161,156 @@
 	</div>
 	<div id="backGround" class="hide"></div>
 	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
-	<script>
-		//删除点击
-		$(function () {
+	<script type="text/javascript">
+		(function () {
+			var obj = {
+				move: 0,
+				startTouchSite: 0,
+				disX: 0,
+				init: function () {
+					var winWidth = $(window).width();
+					var delWidth = $("#slideDeleteBox .del").css("width");
+					var sumWidth = winWidth + parseInt(delWidth);
+
+					$(".touch-box").css("width", sumWidth + 'px');
+					$(".touch").css("width", winWidth + 'px');
+
+					obj.bindEvent();
+					return obj;
+				},
+				bindEvent: function () {
+					if (!obj.isPC()) {
+						$(".touch-box").each(function (i) {
+							document.getElementsByClassName('touch-box')[i].addEventListener('touchstart',
+								function (event) {
+									var e = event || window.event;
+
+									var touchPosition = e.targetTouches[0];
+									var touch_x = touchPosition.pageX;
+									var offsetLeft = $(this).offset().left;
+
+									obj.move = 0;
+									obj.startTouchSite = touch_x;
+									obj.disX = touch_x - offsetLeft;
+
+									$(".open").each(function () {
+										if ($(this).css('left') !== "0px") {
+											$(this).animate({
+												'left': '0'
+											}, 300);
+										}
+									});
+
+									if ($(this).css('left') === '-60px') {
+										$(this).animate({
+											'left': '0'
+										}, 300, function () {
+											if (!$(this).is(":animated")) {
+												var offsetLeft = $(this).offset().left;
+												obj.disX = touch_x - offsetLeft;
+											}
+										});
+									}
+								}, {
+									passive: false
+								});
+
+							document.getElementsByClassName('touch-box')[i].addEventListener('touchmove',
+								function (event) {
+									var e = event || window.event;
+
+									var touchPosition = e.targetTouches[0];
+									var touch_x = touchPosition.pageX;
+									var left = $(this).css('left');
+									$('.touch-box').eq(i).stop();
+
+									obj.move = touch_x - obj.disX;
+
+									if (touch_x < obj.startTouchSite && obj.move < 0 && obj.move >= -
+										100) {
+										$(this).css('left', obj.move + 'px');
+									} else if (touch_x > obj.startTouchSite && obj.move < 0 && obj
+										.move >= -100) {
+										$(this).css('left', obj.move + 'px');
+									}
+								}, {
+									passive: false
+								});
+
+							document.getElementsByClassName('touch-box')[i].addEventListener('touchend',
+								function (event) {
+									var e = event || window.event;
+
+									if (obj.move < -50) {
+										$(this).animate({
+											'left': '-75px'
+										}, 300);
+										$(this).addClass('open');
+									} else {
+										$(this).animate({
+											'left': '0'
+										}, 300);
+										$(this).removeClass('open');
+									}
+								}, {
+									passive: false
+								});
+
+							document.getElementsByClassName('del')[i].addEventListener('touchstart',
+								function (event) {
+									var e = event || window.event;
+									e.preventDefault();
+									e.stopPropagation();
+
+									var touch = e.targetTouches[0];
+
+									self.delTouchStartX = touch.pageX;
+									$("#choiceWindow").slideDown(200);
+									$("#backGround").toggle();
+									return false;
+								}, {
+									passive: false
+								});
+						});
+					} else {
+						$(document).on("dblclick", ".touch", function () {
+							var left = $(this).parent().css('left');
+
+							$(".open").animate({
+								'left': '0'
+							}, 300, function () {
+								$(this).removeClass("open");
+							});
+
+							if (left === '-75px') {
+								$(this).parent().animate({
+									'left': '0'
+								}, 300);
+							} else {
+								$(this).parent().animate({
+									'left': '-75px'
+								}, 300, function () {
+									$(this).addClass('open');
+								});
+							}
+						});
+					}
+				},
+				isPC: function () {
+					var userAgentInfo = navigator.userAgent;
+					var agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+					var flag = true;
+					for (var i = 0; i < agents.length; i++) {
+						if (userAgentInfo.indexOf(agents[i]) > 0) {
+							flag = false;
+							break;
+						}
+					}
+					return flag;
+				}
+			};
+			window.slideDelete = new obj.init();
+
 			$(".show").click(function () {
 				$("#choiceWindow").slideDown(200);
 				$("#backGround").toggle();
@@ -88,22 +319,12 @@
 				$("#choiceWindow").slideUp(200);
 				$("#backGround").toggle();
 			});
-			$(".options").on("touchstart", function (e) {
-				startX = e.originalEvent.changedTouches[0].pageX,
-				startY = e.originalEvent.changedTouches[0].pageY;
-			});
-			$(".options").on("touchmove", function (e) {
-				e.preventDefault();
-				moveEndX = e.originalEvent.changedTouches[0].pageX,
-					moveEndY = e.originalEvent.changedTouches[0].pageY,
-					X = moveEndX - startX,
-					Y = moveEndY - startY;
-				if (X > 50) {
-					$(this).find(".delete").hide()
-				} else if (X < 50) {
-					$(this).find(".delete").show()
-				}
-			});
+		})();
+	</script>
+	<script>
+		//删除点击
+		$(function () {
+			
 		})
 	</script>
 </body>

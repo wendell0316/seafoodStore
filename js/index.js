@@ -100,4 +100,3 @@ function closeModal(type = 'bottom') {
         centerDom.style.display = 'none';
     }
 }
-

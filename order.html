@@ -15,7 +15,7 @@
 		<img src="./images/back.png" alt="" class="back">
 		我的订单
 	</div>
-	<div class="order-bar">
+	<div class="order-bar" id="tabcilk">
 		<div class="item active">
 			全部订单
 		</div>
@@ -29,37 +29,125 @@
 			已发货
 		</div>
 	</div>
-	<div class="order-content-box">
-		<div class="item">
-			<img src="./images/prodImg.png" alt="">
-			<div class="order-content-left-box">
-				<p class="title">泰国进口新鲜龙利鱼无骨龙利鱼</p>
-				<p class="secondTitle">这是副标题</p>
-				<div class="bottom">
-					<span>¥53000.00</span>
-					<button>待发货</button>
+	<div class="order-content-box" id="tabbox">
+		<li style="display: block;">
+			<div class="item">
+				<img src="./images/prodImg.png" alt="">
+				<div class="order-content-left-box">
+					<p class="title">泰国进口新鲜龙利鱼无骨龙利鱼</p>
+					<p class="secondTitle">这是副标题</p>
+					<div class="bottom">
+						<span>¥53000.00</span>
+						<button>待发货</button>
+					</div>
 				</div>
 			</div>
-		</div>
+			<div class="item">
+				<img src="./images/prodImg.png" alt="">
+				<div class="order-content-left-box">
+					<p class="title">泰国进口新鲜龙利鱼无骨龙利鱼</p>
+					<p class="secondTitle">这是副标题</p>
+					<div class="bottom">
+						<span>¥53000.00</span>
+						<button>待发货</button>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="item">
+				<img src="./images/prodImg.png" alt="">
+				<div class="order-content-left-box">
+					<p class="title">泰国进口新鲜龙利鱼无1</p>
+					<p class="secondTitle">这是副标题1</p>
+					<div class="bottom">
+						<span>¥53000.00</span>
+						<button>待发货</button>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<img src="./images/prodImg.png" alt="">
+				<div class="order-content-left-box">
+					<p class="title">泰国进口新鲜龙利鱼无骨1</p>
+					<p class="secondTitle">这是副标题1</p>
+					<div class="bottom">
+						<span>¥53000.00</span>
+						<button>待发货</button>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="item">
+				<img src="./images/prodImg.png" alt="">
+				<div class="order-content-left-box">
+					<p class="title">泰国进口新鲜龙利鱼无骨2</p>
+					<p class="secondTitle">这是副标题2</p>
+					<div class="bottom">
+						<span>¥53000.00</span>
+						<button>待发货</button>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<img src="./images/prodImg.png" alt="">
+				<div class="order-content-left-box">
+					<p class="title">泰国进口新鲜龙利鱼无骨2</p>
+					<p class="secondTitle">这是副标题2</p>
+					<div class="bottom">
+						<span>¥53000.00</span>
+						<button>待发货</button>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="item">
+				<img src="./images/prodImg.png" alt="">
+				<div class="order-content-left-box">
+					<p class="title">泰国进口新鲜龙利鱼3</p>
+					<p class="secondTitle">这是副标3题3</p>
+					<div class="bottom">
+						<span>¥53000.00</span>
+						<button>待发货</button>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<img src="./images/prodImg.png" alt="">
+				<div class="order-content-left-box">
+					<p class="title">泰国进口新鲜龙利鱼无骨3</p>
+					<p class="secondTitle">这是副标题3</p>
+					<div class="bottom">
+						<span>¥53000.00</span>
+						<button>待发货</button>
+					</div>
+				</div>
+			</div>
+		</li>
 	</div>
+
 	<script>
-		const orderBar = document.querySelector('.order-bar');
-		orderBar.addEventListener('click', (e) => {
-			const allItems = [...orderBar.children];
-			if (e.target.className === 'item') {
-				
-			} else {
-				return
+		var ali = document.getElementById("tabcilk").getElementsByClassName("item");
+		var adiv = document.getElementById("tabbox").getElementsByTagName("li");
+
+		function tab(btn, boxlist) {
+			for (var i = 0; i < btn.length; i++) {
+				btn[i].index = i;
+				btn[i].onclick = function () {
+					for (var j = 0; j < btn.length; j++) {
+						btn[j].classList.remove("active")
+						boxlist[j].style.display = "none";
+						btn[this.index].classList.add("active");
+						boxlist[this.index].style.display = "block";
+					}
+				}
 			}
-			for (const item of allItems) {
-				item.classList.remove('active');
-			}
-			for (const item of allItems) {
-				e.target.classList.add('active')
-			}
-			
-		})
+		}
+		tab(ali, adiv);
 	</script>
+
 </body>
 
 </html>
