@@ -28,8 +28,8 @@
 				<input class="input-item" type="password" name="" id="" placeholder="请输入登录密码">
 			</div>
 			<div class="opt-bar">
-				<div class="rempwdIcon" id="rember"></div>
-				<div class="rempwd">记住密码</div>
+				<div class="rempwdIcon rember" id="rember"></div>
+				<div class="rempwd rember2">记住密码</div>
 				<div class="forget">忘记密码？</div>
 			</div>
 			<button>登陆</button>
@@ -47,8 +47,11 @@
 			$(".input-item").blur(function () {
 				$(this).parent().css('opacity', '0.6');
 			});
-			$('#rember').click(function () {
+			$('.rember').click(function () {
 				$(this).toggleClass('full');
+			});
+			$('.rember2').click(function () {
+				$(this).prev().toggleClass('full');
 			});
 		})
 		if (/os 1[2,3,4,5]{1}/gi.test(navigator.userAgent)) {

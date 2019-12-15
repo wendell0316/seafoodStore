@@ -902,6 +902,7 @@ input {
     font-size: 12px;
     margin-top: 15px;
     color: rgba(128, 128, 128, 1);
+    line-height: 21px;
 }
 .detailPage .submit-btn-box {
     width: 100%;
@@ -928,6 +929,23 @@ input {
     align-items: center;
     color: #fff;
     margin-top: 10px;
+}
+.detailPage .submit-btn2{
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(
+        180deg,
+        rgba(2, 171, 255, 1) 0%,
+        rgba(0, 134, 255, 1) 42%,
+        rgba(0, 145, 229, 1) 100%
+    );
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-top: 10px;
+    margin: 0 10px;
 }
 .detailPage .center {
     display: flex;
