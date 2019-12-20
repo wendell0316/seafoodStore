@@ -891,6 +891,7 @@ input {
 }
 .detailPage .about {
     padding: 15px;
+    padding-bottom: 70px;
 }
 .detailPage .about span {
     font-size: 12px;
